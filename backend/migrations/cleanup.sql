@@ -1,0 +1,1 @@
+TRUNCATE pants, shirts, shorts;
