@@ -1,7 +1,5 @@
 import express, { Application } from 'express';
-import shirtsRouter from './routes/shirts.js';
-import shortsRouter from './routes/shorts.js';
-import pantsRouter from './routes/pants.js';
+import { pantsRouter, shirtsRouter, shortsRouter } from './routes.js';
 
 const app: Application = express();
 const port = 3000;
