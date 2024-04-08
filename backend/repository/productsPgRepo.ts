@@ -15,15 +15,16 @@ const pool = new Pool({
 
 export const getAllPantsQuery = async (): Promise<TPants[]> =>  {
     try{
-        const {rows} = await pool.query("SELECT (id, model, size, price ) FROM pants")
-        return rows
+        const start = Date.now()
+        const query = "SELECT id, model, size, price FROM pants"
+        const result = await pool.query({text: query})
+        const duration = Date.now() - start + "ms"
+        console.log("executed query", {statement: query, duration, rows: result.rowCount })
+        return result.rows
     }
     catch (error) {
         console.error("error performing query", {error})
         const emptyPants = {} as TPants
         return  [emptyPants]
-    }
-    finally{
-        pool.end()
     }
 }
