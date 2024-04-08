@@ -22,10 +22,19 @@ const HomePage = () => {
         </button>
       </Banner>
 
-      <div className="grid grid-cols-[repeat(3,minmax(0,406px))] justify-center gap-10 h-[565px] px-12 mb-20 mx-auto">
-        <CategoryBanner src={HomeMen} alt="Roupas Masculinas." text="Homem" />
-        <CategoryBanner src={HomeMen} alt="Roupas Femininas." text="Mulher" />
-        <CategoryBanner src={HomeMen} alt="Roupas Fitness." text="Fitness" />
+      <div className="grid grid-cols-[repeat(3,minmax(0,406px))] justify-center gap-10 h-[565px] px-12 mb-20 mx-auto max-xl:max-h-[460px] max-md:max-h-72 max-md:gap-4 max-sm:gap-2 max-md:px-8 max-sm:px-4 max-lg:mb-16 max-md:mb-8">
+        <CategoryBanner
+          className="bg-[url('./assets/home-men.jpg')]"
+          text="Homem"
+        />
+        <CategoryBanner
+          className="bg-[url('./assets/home-men.jpg')]"
+          text="Mulher"
+        />
+        <CategoryBanner
+          className="bg-[url('./assets/home-men.jpg')]"
+          text="Fitness"
+        />
       </div>
 
       <div
