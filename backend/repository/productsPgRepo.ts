@@ -1,17 +1,6 @@
 import pg from 'pg';
 import { Pants, TPants } from '../entities/entities.js';
 
-
-export const db = new pg.Pool({
-    host: "localhost",
-    port: 5432,
-    database: "postgres",
-    user: "postgres",
-    password: "password",
-    max: 10,
-
-});
-
 export class PantsRepository {
     pool: pg.Pool
     constructor(pool: pg.Pool){
