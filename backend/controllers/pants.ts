@@ -1,5 +1,6 @@
 import {Request, Response} from 'express';
 import { PantsRepository } from '../repository/productsPgRepo.js';
+import { PantsDTO, TPantsDTO } from '../entities/entities.js';
 
 
 export class PantsController {
@@ -16,7 +17,15 @@ export class PantsController {
         const pant = this.repo.getById(parseInt (id))
     };
     create = (req: Request, res: Response) => {
-        res.send("Create a new pair of pants");
+        try{
+            const pants = new PantsDTO(req.body)
+            pants.validate()
+            res.json(pants);
+        } catch (error) {
+            console.error(error)
+            res.status(400).json(`{"error": ${error}}`)
+        }
+    
     };
     update = (req: Request, res: Response) => {
         res.send(`Update pants with id ${req.params.id}`);
