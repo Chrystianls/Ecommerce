@@ -1,10 +1,9 @@
 import CategoryBanner from "../../components/Home/CategoryBanner";
 import Header from "../../components/Header";
 import HomeGrey from "../../assets/home-gray.jpg";
-import HomeMen from "../../assets/home-men.jpg";
-import HomeProduct from "../../components/Home/Product";
 import Footer from "../../components/Footer";
 import Banner from "../../components/Home/Banner";
+import Product from "../../components/Home/Product";
 
 const HomePage = () => {
   return (
@@ -37,30 +36,11 @@ const HomePage = () => {
         />
       </div>
 
-      <div
-        className="grid grid-cols-[repeat(4,minmax(0,220px))] gap-20 justify-center mx-auto mb-24
-  "
-      >
-        <HomeProduct
-          src={HomeGrey}
-          alt="Produto"
-          name="Moletom com capuz feminino cinza"
-        />
-        <HomeProduct
-          src={HomeGrey}
-          alt="Produto"
-          name="Moletom com capuz feminino cinza"
-        />
-        <HomeProduct
-          src={HomeGrey}
-          alt="Produto"
-          name="Moletom com capuz feminino cinza"
-        />
-        <HomeProduct
-          src={HomeGrey}
-          alt="Produto"
-          name="Moletom com capuz feminino cinza"
-        />
+      <div className="grid grid-cols-[repeat(4,minmax(64px,220px))] px-10 gap-20 justify-center mx-auto mb-24 max-xl:gap-10 max-sm:px-8 max-md:gap-3 max-sm:grid-cols-3 max-lg:mb-16 max-md:mb-8">
+        <Product src={HomeGrey} alt="Produto" name="Moletom com capuz" />
+        <Product src={HomeGrey} alt="Produto" name="Moletom com capuz" />
+        <Product src={HomeGrey} alt="Produto" name="Moletom com capuz" />
+        <Product src={HomeGrey} alt="Produto" name="Moletom com capuz" />
       </div>
 
       <button className="flex uppercase font-medium text-base text-neutral-50 py-3 px-4 bg-neutral-800 w-fit mx-auto mb-5 hover:bg-neutral-600">
