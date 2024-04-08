@@ -1,7 +1,9 @@
 import {Request, Response} from 'express';
+import { getAllPantsQuery } from '../repository/productsPgRepo.js';
 
-export const getAllPants = (req: Request, res: Response) => {
-    res.send("Get all pants");
+export const getAllPants = async (req: Request, res: Response) => {
+    const pants = await getAllPantsQuery()
+    res.json(pants);
 };
 
 export const getPantsById = (req: Request, res: Response) => {

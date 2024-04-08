@@ -1,11 +1,24 @@
 type Size = "XS" | "S" | "M" | "L" | "XL" | "XXL"
 
-export type Pants = {
+export type TPants = {
     id: number;
     model: string;
     size: Size;
     price: number;
 };
+
+export class Pants {
+    id: number;
+    model: string;
+    size: Size; 
+    price: number;
+    constructor(pants: TPants){
+        this.id = pants.id;
+        this.model = pants.model;
+        this.size= pants.size;
+        this.price=pants.price;
+    }
+}
 
 export type TPantsDTO = {
     model  : string;
@@ -25,12 +38,9 @@ export class PantsDTO  {
         this.price = pants.price;
         this.updatedAt = pants.updatedAt;
     }
-    validate(){
+    validate(): void{
         if (this.model === "" || this.model === undefined || this.model === null ){
             throw new Error("parameter model is required")
-        }
-        if (this.size == undefined || this.size === null){
-            throw new Error("parameter size is required")
         }
         if (this.price === undefined || this.price == null) {
             throw new Error ("parameter price is required")
