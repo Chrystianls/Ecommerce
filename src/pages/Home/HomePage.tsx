@@ -10,11 +10,14 @@ const HomePage = () => {
   return (
     <>
       <Header />
-      <Banner bg="bg-[url('./assets/home-page.jpg')]">
-        <h2 className="uppercase font-medium text-5xl text-neutral-50 mb-10 ml-28">
+      <Banner
+        bg="bg-[url('./assets/home-page.jpg')]"
+        className="max-xl:max-h-[500px] max-md:max-h-96"
+      >
+        <h2 className="uppercase font-medium text-5xl text-neutral-50 mb-10 ml-28 max-xl:ml-14 max-md:ml-7 max-xl:mb-6 max-md:mb-3 max-lg:text-4xl max-md:text-2xl">
           Apenas o básico
         </h2>
-        <button className="uppercase font-medium text-2xl text-neutral-900 w-fit py-3 px-4 bg-neutral-100 ml-28 hover:bg-neutral-800 hover:text-neutral-50">
+        <button className="uppercase font-medium text-2xl text-neutral-900 w-fit py-3 px-4 bg-neutral-100 ml-28 hover:bg-neutral-800 hover:text-neutral-50 max-xl:ml-14 max-md:ml-7 max-xl:text-base max-md:text-sm">
           Comprar Agora
         </button>
       </Banner>
