@@ -1,14 +1,16 @@
 interface CategoryBannerProps {
-  src: string;
-  alt: string;
   text: string;
+  className?: string;
 }
 
-const CategoryBanner = ({ src, alt, text }: CategoryBannerProps) => {
+const CategoryBanner = ({ text, className }: CategoryBannerProps) => {
   return (
-    <div className="flex justify-center items-center w-full relative cursor-pointer">
-      <img className="absolute w-full h-full -z-10" src={src} alt={alt} />
-      <h3 className="font-medium text-neutral-100 text-4xl">{text}</h3>
+    <div
+      className={`flex justify-center items-center w-full relative cursor-pointer bg-cover bg-center bg-no-repeat ${className}`}
+    >
+      <h3 className="font-medium text-neutral-100 text-4xl max-lg:text-3xl max-md:text-2xl">
+        {text}
+      </h3>
     </div>
   );
 };
