@@ -1,7 +1,8 @@
-import pg, { Pool, QueryResult } from 'pg';
-import { Pants, TPants } from '../entities/entities';
+import pg from 'pg';
+import { Pants, TPants } from '../entities/entities.js';
 
-const pool = new Pool({
+
+export const db = new pg.Pool({
     host: "localhost",
     port: 5432,
     database: "postgres",
@@ -12,8 +13,8 @@ const pool = new Pool({
 });
 
 export class PantsRepository {
-    pool: Pool
-    constructor(pool: Pool){
+    pool: pg.Pool
+    constructor(pool: pg.Pool){
         this.pool = pool
     }    
     getAll = async (): Promise<TPants[]> =>  {
