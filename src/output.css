@@ -580,10 +580,6 @@ video {
   margin-bottom: 2.5rem;
 }
 
-.mb-2 {
-  margin-bottom: 0.5rem;
-}
-
 .mb-20 {
   margin-bottom: 5rem;
 }
@@ -614,10 +610,6 @@ video {
 
 .ml-3 {
   margin-left: 0.75rem;
-}
-
-.mt-2 {
-  margin-top: 0.5rem;
 }
 
 .mt-1 {
@@ -789,6 +781,11 @@ video {
   padding: 0.5rem;
 }
 
+.px-10 {
+  padding-left: 2.5rem;
+  padding-right: 2.5rem;
+}
+
 .px-12 {
   padding-left: 3rem;
   padding-right: 3rem;
@@ -822,16 +819,6 @@ video {
 .py-4 {
   padding-top: 1rem;
   padding-bottom: 1rem;
-}
-
-.px-8 {
-  padding-left: 2rem;
-  padding-right: 2rem;
-}
-
-.px-10 {
-  padding-left: 2.5rem;
-  padding-right: 2.5rem;
 }
 
 .pr-14 {
@@ -924,6 +911,26 @@ body {
   overflow-x: hidden;
 }
 
+.placeholder\:text-sm::-moz-placeholder {
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+}
+
+.placeholder\:text-sm::placeholder {
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+}
+
+.placeholder\:text-xs::-moz-placeholder {
+  font-size: 0.75rem;
+  line-height: 1rem;
+}
+
+.placeholder\:text-xs::placeholder {
+  font-size: 0.75rem;
+  line-height: 1rem;
+}
+
 .hover\:bg-neutral-200:hover {
   --tw-bg-opacity: 1;
   background-color: rgb(229 229 229 / var(--tw-bg-opacity));
@@ -953,6 +960,10 @@ body {
     margin-left: 3.5rem;
   }
 
+  .max-xl\:ml-0 {
+    margin-left: 0px;
+  }
+
   .max-xl\:max-h-\[460px\] {
     max-height: 460px;
   }
@@ -976,8 +987,12 @@ body {
     margin-bottom: 4rem;
   }
 
-  .max-lg\:mb-20 {
-    margin-bottom: 5rem;
+  .max-lg\:max-h-80 {
+    max-height: 20rem;
+  }
+
+  .max-lg\:gap-16 {
+    gap: 4rem;
   }
 
   .max-lg\:px-2 {
@@ -997,6 +1012,10 @@ body {
 }
 
 @media not all and (min-width: 768px) {
+  .max-md\:col-span-2 {
+    grid-column: span 2 / span 2;
+  }
+
   .max-md\:col-start-1 {
     grid-column-start: 1;
   }
@@ -1011,6 +1030,11 @@ body {
 
   .max-md\:row-start-1 {
     grid-row-start: 1;
+  }
+
+  .max-md\:mx-auto {
+    margin-left: auto;
+    margin-right: auto;
   }
 
   .max-md\:mb-3 {
@@ -1029,8 +1053,16 @@ body {
     margin-left: 1.75rem;
   }
 
+  .max-md\:ml-0 {
+    margin-left: 0px;
+  }
+
   .max-md\:mb-5 {
     margin-bottom: 1.25rem;
+  }
+
+  .max-md\:mb-2 {
+    margin-bottom: 0.5rem;
   }
 
   .max-md\:block {
@@ -1049,6 +1081,10 @@ body {
     display: none;
   }
 
+  .max-md\:max-h-60 {
+    max-height: 15rem;
+  }
+
   .max-md\:max-h-72 {
     max-height: 18rem;
   }
@@ -1057,34 +1093,51 @@ body {
     max-height: 24rem;
   }
 
+  .max-md\:max-w-full {
+    max-width: 100%;
+  }
+
   .max-md\:grid-cols-\[1fr_auto_auto\] {
     grid-template-columns: 1fr auto auto;
   }
 
-  .max-md\:grid-cols-3 {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
+  .max-md\:grid-cols-2 {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .max-md\:grid-cols-1 {
+    grid-template-columns: repeat(1, minmax(0, 1fr));
   }
 
   .max-md\:grid-rows-2 {
     grid-template-rows: repeat(2, minmax(0, 1fr));
   }
 
-  .max-md\:gap-2 {
-    gap: 0.5rem;
+  .max-md\:gap-3 {
+    gap: 0.75rem;
   }
 
   .max-md\:gap-4 {
     gap: 1rem;
   }
 
-  .max-md\:gap-3 {
-    gap: 0.75rem;
+  .max-md\:gap-8 {
+    gap: 2rem;
+  }
+
+  .max-md\:gap-2 {
+    gap: 0.5rem;
   }
 
   .max-md\:space-x-1 > :not([hidden]) ~ :not([hidden]) {
     --tw-space-x-reverse: 0;
     margin-right: calc(0.25rem * var(--tw-space-x-reverse));
     margin-left: calc(0.25rem * calc(1 - var(--tw-space-x-reverse)));
+  }
+
+  .max-md\:px-1 {
+    padding-left: 0.25rem;
+    padding-right: 0.25rem;
   }
 
   .max-md\:px-3 {
@@ -1097,9 +1150,23 @@ body {
     padding-right: 2rem;
   }
 
-  .max-md\:px-1 {
-    padding-left: 0.25rem;
-    padding-right: 0.25rem;
+  .max-md\:px-5 {
+    padding-left: 1.25rem;
+    padding-right: 1.25rem;
+  }
+
+  .max-md\:px-4 {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  .max-md\:py-2 {
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+  }
+
+  .max-md\:text-center {
+    text-align: center;
   }
 
   .max-md\:text-2xl {
@@ -1121,15 +1188,25 @@ body {
     font-size: 0.75rem;
     line-height: 1rem;
   }
+
+  .max-md\:placeholder\:text-xs::-moz-placeholder {
+    font-size: 0.75rem;
+    line-height: 1rem;
+  }
+
+  .max-md\:placeholder\:text-xs::placeholder {
+    font-size: 0.75rem;
+    line-height: 1rem;
+  }
 }
 
 @media not all and (min-width: 640px) {
-  .max-sm\:grid-cols-3 {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
+  .max-sm\:ml-0 {
+    margin-left: 0px;
   }
 
-  .max-sm\:gap-1 {
-    gap: 0.25rem;
+  .max-sm\:grid-cols-3 {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
   }
 
   .max-sm\:gap-2 {
@@ -1144,5 +1221,10 @@ body {
   .max-sm\:px-8 {
     padding-left: 2rem;
     padding-right: 2rem;
+  }
+
+  .max-sm\:text-xs {
+    font-size: 0.75rem;
+    line-height: 1rem;
   }
 }

@@ -43,11 +43,11 @@ const HomePage = () => {
         <Product src={HomeGrey} alt="Produto" name="Moletom com capuz" />
       </div>
 
-      <button className="flex uppercase font-medium text-base text-neutral-50 py-3 px-4 bg-neutral-800 w-fit mx-auto mb-5 hover:bg-neutral-600">
+      <button className="flex uppercase font-medium text-base text-neutral-50 py-3 px-4 bg-neutral-800 w-fit mx-auto mb-5 hover:bg-neutral-600 max-sm:text-xs">
         Ver todos os produtos
       </button>
 
-      <div className="bg-[url('./assets/home-page.jpg')] bg-cover bg-no-repeat w-full h-[521px] mb-7"></div>
+      <div className="bg-[url('./assets/home-page.jpg')] bg-cover bg-no-repeat bg-center w-full h-[521px] mb-7 max-lg:max-h-80 max-md:max-h-60"></div>
 
       <Footer />
     </>
