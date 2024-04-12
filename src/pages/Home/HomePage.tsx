@@ -40,7 +40,12 @@ const HomePage = () => {
         <Product src={HomeGrey} alt="Produto" name="Moletom com capuz" />
         <Product src={HomeGrey} alt="Produto" name="Moletom com capuz" />
         <Product src={HomeGrey} alt="Produto" name="Moletom com capuz" />
-        <Product src={HomeGrey} alt="Produto" name="Moletom com capuz" />
+        <Product
+          src={HomeGrey}
+          alt="Produto"
+          name="Moletom com capuz"
+          className="max-md:hidden"
+        />
       </div>
 
       <button className="flex uppercase font-medium text-base text-neutral-50 py-3 px-4 bg-neutral-800 w-fit mx-auto mb-5 hover:bg-neutral-600 max-sm:text-xs">

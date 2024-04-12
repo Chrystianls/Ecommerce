@@ -1,4 +1,5 @@
 import { Menu, Search, ShoppingBag, User } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const Header = () => {
   return (
@@ -6,12 +7,12 @@ const Header = () => {
       <button className="p-2 rounded-full hover:bg-neutral-200 max-md:col-start-3 max-md:ml-1">
         <Menu />
       </button>
-      <a
-        href=""
+      <Link
+        to="/"
         className="font-medium text-6xl text-neutral-950 max-md:col-start-1 max-md:row-start-1 max-md:text-5xl"
       >
         AYT
-      </a>
+      </Link>
       <div className="flex space-x-5 max-md:col-start-2 max-md:row-start-1 max-md:space-x-1">
         <button className="p-2 rounded-full hover:bg-neutral-200 max-md:hidden">
           <Search />
