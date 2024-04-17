@@ -1,5 +1,5 @@
 import express, { Application } from 'express';
-import cors from 'cors';
+import cors,{CorsOptions} from 'cors';
 import pg from 'pg';
 import "dotenv/config";
 import { registerRoutes, shirtsRouter, shortsRouter } from './routes.js';
@@ -7,7 +7,11 @@ import { PantsController } from '../controllers/pants.js';
 import { PantsRepository } from '../repository/productsPgRepo.js';
 const app: Application = express();
 const port = process.env.SERVER_PORT || 3000;
+const corsOptions: CorsOptions =  {
+    credentials: true,
+    origin: ['http://localhost:5173','http://127.0.0.1:5173']
 
+}
 const db = new pg.Pool({
     host: process.env.POSTGRES_HOST || "localhost",
     port: parseInt(process.env.POSTGRES_PORT!) || 5432,
@@ -21,9 +25,11 @@ const db = new pg.Pool({
 const pantsRepo = new PantsRepository(db)
 const pantsController =  new PantsController(pantsRepo)
 
-registerRoutes(app, pantsController)
+app.use(cors(corsOptions))
 
-app.use(cors())
+registerRoutes(app, pantsController)
+// Change shirts router to be applied inside registerRouter function.
+// Must create the controller and repository for the next routers
 app.use(shirtsRouter);
 app.use(shortsRouter);
 
