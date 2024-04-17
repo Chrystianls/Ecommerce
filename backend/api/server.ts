@@ -1,10 +1,10 @@
 import express, { Application } from 'express';
+import cors from 'cors';
 import pg from 'pg';
 import "dotenv/config";
 import { registerRoutes, shirtsRouter, shortsRouter } from './routes.js';
 import { PantsController } from '../controllers/pants.js';
 import { PantsRepository } from '../repository/productsPgRepo.js';
-
 const app: Application = express();
 const port = process.env.SERVER_PORT || 3000;
 
@@ -23,6 +23,7 @@ const pantsController =  new PantsController(pantsRepo)
 
 registerRoutes(app, pantsController)
 
+app.use(cors())
 app.use(shirtsRouter);
 app.use(shortsRouter);
 
